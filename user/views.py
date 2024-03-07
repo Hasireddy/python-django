@@ -7,14 +7,25 @@ from . import templates
 
 def registerView(request):
     if request.method == 'POST':
-        first_name = request.POST['first_name']
-        last_name = request.POST['last_name']
+        firstname = request.POST['firstname']
+        lastname = request.POST['lastname']
         email = request.POST['email']
         password = request.POST['password']
-        # user = User.objects.create_user(first_name=first_name,last_name=last_name,email=email,password=password)
-        # user.save()
-        # return user
-        print('User created')
-        # return redirect('/')
+        confirmPassword = request.POST['confirmPassword']
+        if password==confirmPassword:
+         if User.objects.filter(email==email).exists():
+            print('Email already exists')
+         else:
+            user = User.objects.create_user(firstname=firstname,lastname=lastname,email=email,password=password,confirmPassword=confirmPassword)
+            user.save()
+            return user
+            print('User created')
+            # return redirect('/')
     else:
+     print('User not created')
      return render(request,'registerUser.html')
+
+def loginView(request):
+   return render(request,'loginUser.html')
+    
+   
