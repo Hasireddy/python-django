@@ -12,14 +12,14 @@
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="validationCustom01">First name</label>
-        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="first_name" required>
+        <input type="text" class="form-control" id="validationCustom01" placeholder="First name" name="firstname" required>
         <div class="valid-feedback">
           Looks good!
         </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationCustom02">Last name</label>
-        <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" name="last_name" required>
+        <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" name="lastname" required>
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -41,6 +41,17 @@
       <div class="col-md-6 mb-3">
         <label for="validationCustom03">Password</label>
         <input type="password" class="form-control" id="validationCustom03" placeholder="Password" name="password" required>
+        <div class="invalid-feedback">
+          Please provide a valid Password.
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="validationCustom03"> Confirm Password</label>
+        <input type="password" class="form-control" id="validationCustom03" placeholder="Password" name="confirmPassword" required>
         <div class="invalid-feedback">
           Please provide a valid Password.
         </div>
